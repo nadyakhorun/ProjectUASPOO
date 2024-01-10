@@ -42,6 +42,10 @@ Website Peemanggilan Ambulan Darurat merupakan website yang menyediakan layanan 
   
 - Setelah muncul URL, maka dapat dibuka dibrowser dengan link dibawah :
 
+        http://127.0.0.1:8000/
+
+- Tampilan menu yang sudah dirubah menjadi bahasa indonesia
+
 Maka akan tampil dari project Django yang sudah diclone dari repository ini.
 
 # SELESAI
