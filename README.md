@@ -37,7 +37,9 @@ Website Peemanggilan Ambulan Darurat merupakan website yang menyediakan layanan 
 - Install python versi 3.8.0 dari situs resmi : https//www.python.org/downloads/
 - Buka CMD, kemudian mengetik cd file nya
 - Untuk menjalankannya dengan code berikut :
+
       py manage.py runserver
+  
 - Setelah muncul URL, maka dapat dibuka dibrowser dengan link dibawah :
 
 Maka akan tampil dari project Django yang sudah diclone dari repository ini.
