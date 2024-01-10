@@ -4,9 +4,9 @@ Kelompok 8 :
 
 Nama Kelompok  :
 
-1. Abdul Aziz
+1. Abdul Aziz (312210022)
 2. Amanda Puspa Negara (312210129)
-3. Bayu Maulana Ayassy
+3. Bayu Maulana Ayassy (312210166)
 4. Dhea Dwi Adelia (312210116)
 5. Nadya Khairunnisa (312210133)
 
