@@ -46,7 +46,11 @@ Website Peemanggilan Ambulan Darurat merupakan website yang menyediakan layanan 
 
 - Tampilan menu yang sudah dirubah menjadi bahasa indonesia
 
-Maka akan tampil dari project Django yang sudah diclone dari repository ini.
+![WhatsApp Image 2024-01-10 at 14 52 55_3e7b8a7f](https://github.com/nadyakhorun/ProjectUASPOO/assets/115801823/218c629d-cb23-4c3b-8f77-7058b88ffedf)
+
+![WhatsApp Image 2024-01-10 at 14 52 55_53ab0a27](https://github.com/nadyakhorun/ProjectUASPOO/assets/115801823/247b5acc-8577-4357-975a-192905b6b939)
+
+![WhatsApp Image 2024-01-10 at 14 52 55_9aaf2e49](https://github.com/nadyakhorun/ProjectUASPOO/assets/115801823/d7812aca-ce21-4670-b1a3-5ca979b6466f)
 
 # SELESAI
 
