@@ -1,0 +1,63 @@
+{% include 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lihat Status - Pemanggilan Ambulan Darurat</title>
+</head>
+<body>
+<br>
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <div class="card my-4" style="border : 2px ridge green">
+            <h5 class="card-header text-info">Cari Laporan dari Nama/No.hp/Alamat</h5>
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="text" name="searchdata" class="form-control"
+                           placeholder="Masukan Nama/No.hp/Alamat"
+                           required>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search" style="height: 25px"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    {% if firereport %}
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nama</th>
+                <th>Nomor Handphone</th>
+                <th>Alamat</th>
+                <th>Waktu Laporan</th>
+                <th>Aksi</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for i in firereport %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.FullName}}</td>
+                <td>{{i.MobileNumber}}</td>
+                <td>{{i.Location}}</td>
+                <td>{{i.Postingdate}}</td>
+                <td><a class="btn btn-primary" href="{% url 'viewStatusDetails' i.id %}"><i class="fa fa-eye"></i></a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
+
+{% include 'footer.html' %}

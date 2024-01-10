@@ -1,0 +1,83 @@
+{% extends 'adminNavbar.html' %}
+{% block main %}
+{% load static %}
+
+<section class="content">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Tambahkan Tim</h1>
+                </div>
+
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                        <li class="breadcrumb-item active">Tim darurat</li>
+                        <li class="breadcrumb-item active">Tambahkan Tim</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Tambahkan Tim Baru</h3>
+                    </div>
+
+                    <!-- form start -->
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Nama Tim</label>
+                                <input type="text" name="teamName" class="form-control" placeholder="Masukan Nama Tim" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Nama Ketua Tim</label>
+                                <input type="text" name="teamLeaderName" class="form-control" placeholder="Masukan Nama Ketua Tim" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>No.Hp Ketua Tim</label>
+                                <input type="text" name="teamLeadMobno" class="form-control" placeholder="Masukan No.Hp" maxlength="10" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Nama Anggota Tim</label>
+                                <input type="text" name="teamMembers" class="form-control" placeholder="Masukan Nama Tim" required>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+{% if error == "no" %}
+<script>
+        alert('Tim Berhasil Dibuat');
+        window.location=('{% url 'manageTeam' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+        alert('Ada Kesalahan, Silahkan Coba Kembali');
+</script>
+{% endif %}
+
+{% endblock %}

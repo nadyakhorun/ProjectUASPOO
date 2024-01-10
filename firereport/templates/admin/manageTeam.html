@@ -1,0 +1,76 @@
+{% extends 'adminNavbar.html' %}
+{% block main %}
+{% load static %}
+
+<section class="content">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Detail Penagturan Tim</h1>
+                </div>
+
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+                        <li class="breadcrumb-item active">Tim Darurat</li>
+                        <li class="breadcrumb-item active">Pengaturan Tim</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Detail Tim</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nama Tim</th>
+                                <th>Nama Ketua Tim</th>
+                                <th>Nomor Handphone Ketua</th>
+                                <th>Anggota Tim</th>
+                                <th>Tanggal Registrasi</th>
+                                <th>Aksi</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for i in teams %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{i.teamName}}</td>
+                                <td>{{i.teamLeaderName}}</td>
+                                <td>{{i.teamLeadMobno}}</td>
+                                <td>{{i.teamMembers}}</td>
+                                <td>{{i.postingDate}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary" href="{% url 'editTeam' i.id %}"><i class="fa fa-edit"></i></a> &nbsp;&nbsp;&nbsp;
+                                        <a class="btn btn-danger" onclick="return confirm('apa kamu yakin ingin menghapusnya ?')" href="{% url 'deleteTeam' i.id %}"><i
+                                            class="fa fa-trash-alt"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
